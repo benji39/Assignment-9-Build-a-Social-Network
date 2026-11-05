@@ -1,0 +1,7 @@
+Design Memo: Social Network Graph
+
+I chose a graph for this social network because friendships are connections between people, and one person can be connected to many others. The people are the vertices and the friendships are the edges. Since a friendship works both ways in this project, the graph is undirected. An adjacency list makes sense because each Person object can keep a list of the people they are friends with. The SocialNetwork class also uses a dictionary so it can find a person by name without searching through every person.
+
+A regular list would not work as well because it mainly keeps items in an order. It would not clearly show all the different friendships between people. A tree is also not the best choice because trees are built around parent-child relationships. A social network does not have one main person at the top, and friends can connect in many different ways.
+
+One trade-off I noticed is that adding a friendship is pretty simple, but the program has to update both people's friend lists. I also check whether a friendship already exists so the same friend does not get added twice. That check can take longer for people who have a lot of friends because it searches their list. Printing the network is easy to understand, but it takes more time as the number of people and friendships grows because it has to go through everyone's friends. Overall, an adjacency list is a good fit because most users will not be connected to every other user.
